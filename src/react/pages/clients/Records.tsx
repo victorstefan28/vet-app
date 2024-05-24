@@ -730,7 +730,22 @@ const RecordComponent: React.FC<RecordComponentProps> = ({ appointmentId }) => {
             ))}
             {toBeAdded.works.map((work: RecordWork, index) => (
               <>
-                <li key={work.work.id}>{work.work.name}</li>
+                <li key={work.work.id}>
+                  {work.work.name}
+                  <Button
+                    size="small"
+                    onClick={() => {
+                      setToBeAdded((prev) => {
+                        const newWorks = [...prev.works];
+                        newWorks.splice(index, 1);
+                        return { ...prev, works: newWorks };
+                      });
+                    }}
+                    startIcon={<Cancel />}
+                    color="error"
+                    sx={{ margin: 0 }}
+                  />
+                </li>
                 <TextField
                   sx={{ marginTop: "10px" }}
                   value={work.quantity}
@@ -750,7 +765,22 @@ const RecordComponent: React.FC<RecordComponentProps> = ({ appointmentId }) => {
             ))}
             {toBeAdded.labs.map((lab: RecordLab, index) => (
               <>
-                <li key={lab.lab.id}>{lab.lab.name}</li>
+                <li key={lab.lab.id}>
+                  {lab.lab.name}
+                  <Button
+                    size="small"
+                    onClick={() => {
+                      setToBeAdded((prev) => {
+                        const newLabs = [...prev.labs];
+                        newLabs.splice(index, 1);
+                        return { ...prev, labs: newLabs };
+                      });
+                    }}
+                    startIcon={<Cancel />}
+                    color="error"
+                    sx={{ margin: 0 }}
+                  />
+                </li>
                 <TextField
                   sx={{ marginTop: "10px" }}
                   value={lab.quantity}

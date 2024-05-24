@@ -118,7 +118,7 @@ function NoAuthPage() {
         <DialogTitle>Creeaza profil</DialogTitle>
         <DialogContent>
           <TextField
-            label="First Name"
+            label="Prenume"
             fullWidth
             value={newProfile.firstName}
             onChange={(e) =>
@@ -126,7 +126,7 @@ function NoAuthPage() {
             }
           />
           <TextField
-            label="Last Name"
+            label="Nume"
             fullWidth
             value={newProfile.lastName}
             onChange={(e) =>

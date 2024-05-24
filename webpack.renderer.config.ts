@@ -14,6 +14,9 @@ export const rendererConfig: Configuration = {
     rules,
   },
   plugins,
+  optimization: {
+    minimize: false,
+  },
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".css"],
     fallback: {
